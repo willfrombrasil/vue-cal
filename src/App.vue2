@@ -1,0 +1,73 @@
+<template>
+  <div id="app" class="bg-dark text-light min-vh-100">
+    <div class="container py-5">
+      <div class="tabs">
+        <ul class="nav nav-tabs" id="tabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <a
+              class="nav-link active"
+              id="transform-tab"
+              data-bs-toggle="tab"
+              href="#transform"
+              role="tab"
+              aria-controls="transform"
+              aria-selected="true"
+            >
+              Transformar Texto
+            </a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a
+              class="nav-link"
+              id="count-tab"
+              data-bs-toggle="tab"
+              href="#count"
+              role="tab"
+              aria-controls="count"
+              aria-selected="false"
+            >
+              Contagem de Texto
+            </a>
+          </li>
+        </ul>
+        <div class="tab-content mt-4" id="tabsContent">
+          <div
+            class="tab-pane fade show active"
+            id="transform"
+            role="tabpanel"
+            aria-labelledby="transform-tab"
+          >
+            <TextTransformer />
+          </div>
+          <div
+            class="tab-pane fade"
+            id="count"
+            role="tabpanel"
+            aria-labelledby="count-tab"
+          >
+            <TextCounter />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import TextTransformer from './components/TextTransformer.vue';
+import TextCounter from './components/TextCounter.vue';
+
+export default {
+  name: 'App',
+  components: {
+    TextTransformer,
+    TextCounter
+  }
+};
+</script>
+
+<style>
+#tabs .nav-link {
+  color: #fff;
+}
+</style>
